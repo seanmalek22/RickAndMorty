@@ -15,9 +15,12 @@ struct RMCharacterRowView: View {
             AsyncImage(url: URL(string: character.image)) { phase in
                 switch phase {
                 case .success(let image):
-                    image.resizable().scaledToFill()
+                    image
+                        .resizable()
+                        .scaledToFill()
                 case .failure:
-                    Image(systemName: "photo").foregroundStyle(.secondary)
+                    Image(systemName: "photo")
+                        .foregroundStyle(.secondary)
                 default:
                     ProgressView()
                 }

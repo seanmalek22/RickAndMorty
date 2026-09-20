@@ -16,9 +16,12 @@ struct RMCharacterDetailView: View {
                 AsyncImage(url: URL(string: character.image)) { phase in
                     switch phase {
                     case .success(let image):
-                        image.resizable().scaledToFit()
+                        image
+                            .resizable()
+                            .scaledToFit()
                     case .failure:
-                        Image(systemName: "photo").font(.largeTitle)
+                        Image(systemName: "photo")
+                            .font(.largeTitle)
                     default:
                         ProgressView()
                     }
