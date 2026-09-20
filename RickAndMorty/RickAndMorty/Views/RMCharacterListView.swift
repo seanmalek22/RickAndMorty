@@ -34,8 +34,12 @@ struct RMCharacterListView: View {
                 }
             }
             .listStyle(.plain)
-            .navigationTitle("Characters")
-            .searchable(text: $viewModel.searchText, prompt: "Search by name")
+            .navigationTitle("RM Characters")
+            .searchable(
+                text: $viewModel.searchText,
+                placement: .navigationBarDrawer(displayMode: .always),
+                prompt: "Search by name"
+            )
             .navigationDestination(for: RMCharacter.self) { character in
                 RMCharacterDetailView(character: character)
             }
