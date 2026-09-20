@@ -24,7 +24,9 @@ struct RMCharacterDetailView: View {
                     }
                 }
                 .frame(maxWidth: .infinity)
+                .accessibilityElement(children: .ignore)
                 .accessibilityLabel("Image of \(character.name)")
+                .accessibilityAddTraits(.isImage)
 
                 VStack(alignment: .leading, spacing: 8) {
                     detailRow(label: "Species", value: character.species)
